@@ -15,4 +15,5 @@ class ContadorController extends Controller
         return view('supervisor.contador');
     }
     //
+    //mira men aqui agregue esto para el contador.
 }
