@@ -52,7 +52,7 @@
                             
  @if (Route::has('register'))
   
-      <a class="link " href="{{ route('register') }}">{{ __('Register') }}</a>
+      <a class="link " href="{{ route('register') }}">{{ __('Registrarse') }}</a>
     
 @endif
 @else
