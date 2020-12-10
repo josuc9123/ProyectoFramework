@@ -21,7 +21,7 @@
 </div>
     @endif
 
-    <form action="{{ route('saveC')}}" method="POST"> 
+<form action="{{ route('saveC')}}" method="POST"> 
     @csrf
 <input  name="categorias" type="text" placeholder="categorias">
 <input name="descripcion" type="text" placeholder="descripcion">
