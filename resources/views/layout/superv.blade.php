@@ -87,10 +87,6 @@
      
      </nav>
     @endguest
-  
-  
-  
-
 
       <link href="../css/gestion20.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
@@ -173,9 +169,8 @@
     @can('create', App\Models\Categorias::class)
         <li class="nav-item px-lg-4">
           <a class="nav-link text-uppercase text-expanded" href="/usuariosS">Usuarios</a>
-        </li>
-       @endcan
-       
+        </li> @endcan
+  
       <li class="nav-item px-lg-4">
           <a class="nav-link text-uppercase text-expanded" href="/home">Home</a>
             </ul>
@@ -240,6 +235,7 @@
  </a>
               </p>
   <p class="m-0 mbt">
+  <!-- agregue las politicas-->
         <a href="sample.html" class="link">Política de privacidad</a> ·
        <a href="sample.html" class="link">Aviso legal</a> ·
         <a href="sample.html" class="link">Cookies</a>
