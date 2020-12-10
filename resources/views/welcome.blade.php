@@ -155,7 +155,7 @@
     <div class="col-md-4" style="color: black">
       <h2>Dispositivos moviles</h2>
       <p>Contamos con servicios a dispositivos moviles, abarcando variedad de modelos y sistemas operativos tales como Android y iOS, ademas de brindar garantias en nuestros servicios. </p>
-      <p><a class="btn btn-primary" href="mantenimiento.html" role="button">Ver detalles &raquo;</a></p>
+      <p><a class="btn btn-primary" href="piep" role="button">Ver detalles &raquo;</a></p>
     
   </div>
     <div class="col-md-4" style="color: black">
