@@ -2,4 +2,5 @@
 
 @section('content')
 <a>ESTA SECCION ES DEL ENCARGADO</a>
+<a>A CONTINUACION LLEVARA EL DESARROLLO DE ESTA SECCION</a>
 @endsection
