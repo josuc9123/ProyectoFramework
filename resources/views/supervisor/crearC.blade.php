@@ -28,7 +28,7 @@
 <input name="tipo" type="text" placeholder="tipo">
 
 
-<button type="submit"  class="btn btn-outline-success">Enviar</button>
+ <button type="submit"  class="btn btn-outline-success">Enviar</button>
 </form>
 <a  class="btn btn-outline-success" href="{{ url('categorias')}}">regresar</button>
 @endsection
