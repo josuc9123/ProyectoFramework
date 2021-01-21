@@ -51,8 +51,7 @@ public function save(Request $request){
     ] );
     $userdata = request()->except('_token');
     User::insert($userdata);
-    
-     return back()->with('usuarioGuardado','Usuario guardado');
+    return back()->with('usuarioGuardado','Usuario guardado');
     
 
 }

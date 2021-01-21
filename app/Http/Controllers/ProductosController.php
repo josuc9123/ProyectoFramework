@@ -17,19 +17,16 @@ if ($request){
   
     return view('supervisor.productoS', compact('productos'));
 }
-    	
-    
-
-    }
+}
     public function crear(){
         return view('supervisor.crearP');
     
-    }
+ }
     // listado
     public function list(){
         $data['productos'] = Productos::simplePaginate(5);
         return view('supervisor.productoS', $data);
-    }
+}
     // guardar
     public function save(Request $request){
         $validator = $this->validate($request,
@@ -44,31 +41,31 @@ if ($request){
         Productos::insert($prodata);
         return back()->with('productoGuardado','producto guardado');
     
-    }
+}
     //eliminar
     public function delete($id){
         Productos::destroy($id);
         return back()->with('productoEliminado','Producto Eliminado');
-    }
+ }
     //editar
     public function editar($id){
         $productos = Productos::findOrFail($id);
         return view('supervisor.editarP', compact('productos'));
-    }
+}
     public function edit(Request $request, $id){
         $datosProducto = request()->except((['_token', '_method']));
        Productos::where('id', '=', $id)->update($datosProducto);
         return back()->with('productoModificado','producto Modificado');
-    }
+}
     
 
     public function store(Request $request)
-    {
+{
         if ($request-hasFile('imagen')){
             $path = $request->file('imagen')-store('public');
             Productos::create(['imagen' => $path]);
         }
-    }
+}
     //
 }
 

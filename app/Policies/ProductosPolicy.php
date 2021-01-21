@@ -42,7 +42,7 @@ class ProductosPolicy
     public function create(User $user)
     
     {
-        return $user->tipo == "1";
+        return $user->tipo == '1';
         //
     }
 
@@ -53,9 +53,9 @@ class ProductosPolicy
      * @param  \App\Models\Productos  $productos
      * @return mixed
      */
-    public function update(User $user, Productos $productos)
+    public function update(User $user)
     {
-        return $user->tipo == "1";
+        return $user->tipo == "4";
         //
     }
 

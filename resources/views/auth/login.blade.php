@@ -1,6 +1,28 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="./css/login.css">
+    <link rel="stylesheet" href="./css/cabecera.css">
+    <link rel="stylesheet" href="./img/main3.jpg">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <style type="text/css">
+			.box{
+				width:600px;
+				margin:0 auto;
+				border:1px solid #ccc;
+			}
+			.has-error
+			{
+				border-color:#cc0000;
+				background-color:#ffff99;
+			}
+		</style>
+</head>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -58,8 +80,8 @@
              </button>
 
             @if (Route::has('password.request'))
-             <a class="btn btn-link" href="{{ route('password.request') }}">
-                {{ __('Forgot Your Password?') }}
+             <a class="btn btn-link" href="{{ route('password.request') }}" style="color:white";>
+                {{ __('OLVIDASTE TU CONTRASEÑA?') }}
                </a>
               @endif
                  </div>

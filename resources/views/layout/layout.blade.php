@@ -177,7 +177,9 @@
           <li class="nav-item px-lg-4">
           <a class="nav-link text-uppercase text-expanded"href="/Mproductos">Mis Productos</a>
           </li>
-          
+          <li class="nav-item px-lg-4">
+          <a class="nav-link text-uppercase text-expanded"href="/productosV">Mis Compras</a>
+          </li>
         </li>
       </ul>
       </ul>
@@ -192,20 +194,20 @@
   <div class="row">
     
     <div class="col-md-4" style="color: black">
-      <h2>Dispositivos moviles</h2>
+    <h2>Dispositivos moviles</h2>
       <p>Contamos con servicios a dispositivos moviles, abarcando variedad de modelos y sistemas operativos tales como Android y iOS, ademas de brindar garantias en nuestros servicios. </p>
-      <p><a class="btn btn-primary" href="mostrap" role="button">Ver detalles &raquo;</a></p>
+      
     
   </div>
     <div class="col-md-4" style="color: black">
       <h2>Audifonos</h2>
-      <p>Ofrecemos, reparaciones,matenimientos, recuperacion de informacion, formateo, instalacion de softwares, paqueterias, driver, antivirus con licencias, instalacion de equipos, al igual que armados de PC personalizados. </p>
-      <p><a class="btn btn-primary" href="computo.html" role="button">Ver detalles &raquo;</a></p>
+      <p>Ofrecemos, gran variedad de productos y de buena calidad para audio. Precios totalmente accesibles, pudes verlo en el apartado de categorias </p>
+      
     </div>
     <div class="col-md-4" style="color:black">
-      <h2>Electronicos</h2>
-      <p>Brindamos mantenimiento a : servidores, routers, gabinetes etc. tambien realizamos cableados de red, diseñamos topologias en simuladores, instalaciones de equipo de red, e identificacion y correciones de errores.</p>
-      <p><a class="btn btn-primary" href="redes.html" role="button">Ver detalles &raquo;</a></p>
+      <h2>Electronica</h2>
+      <p>Contamos tambien con una categoria de electronica en donde encontraras una variedad de productos.</p>
+      
     </div>
   </div>
   </div>

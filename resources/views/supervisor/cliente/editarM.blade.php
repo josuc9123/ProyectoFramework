@@ -26,8 +26,8 @@
 <input  name="Nom_Producto" type="text" placeholder="categoria" value="{{ $productos->Nom_Producto}}">
 <input name="cantidad" type="text" placeholder="descripcion"value="{{ $productos->cantidad}}">
 <input name="precioU" type="text" placeholder="descripcion"value="{{ $productos->precioU}}">
-<input name="tipo_producto" type="number" placeholder="descripcion"value="{{ $productos->tipo_producto}}">
-
+<input name="tipo_producto" type="text" placeholder="tipo"value="{{ $productos->tipo_producto}}">
+<input name="imagen" type="file" style="color:white" placeholder="imagen">
 
 <button type="submit"  class="btn btn-outline-success">Modificar</button>
 </form>

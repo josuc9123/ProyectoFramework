@@ -1,18 +1,12 @@
 @extends('layout.superv')
 
 @section('title', 'categorias')
-
-
 @section('content')
-
-
-
 <div class="container mt-5"style="background-color: rgba(255, 255, 255, 0.80)">
-
 <script type="text/javascript">
       function ConfirmDelete()
       {
-        var respuesta = confirm("estas seguro de eliminar este producto");
+        var respuesta = confirm("¿comprar este producto?");
         if (respuesta == true)
         {
           return true;
@@ -22,28 +16,26 @@
           return false;
         }
       }
-    </script>
-    @if(session('productoEliminado'))
+</script>
+@if(session('productoEliminado'))
     <div class="alert alert-seccess">
-    {{ session('productoEliminado')}}
-    @endif
-    
-    <a><form action="{{route('buscar')}}">Buscar por Nombre</a>
-    <input class="form-control mr-sm-2" name="search" type="search" placeholder="Buscar" aria-label="Search">
-    </form>
-    <table class="table table-bordered table-striped text-center">
+{{ session('productoEliminado')}}
+@endif
+<a><form action="{{route('buscar')}}">Buscar por Nombre</a>
+ <input class="form-control mr-sm-2" name="search" type="search" placeholder="Buscar" aria-label="Search">
+  </form>
+   <table class="table table-bordered table-striped text-center">
   <thead>
-      
-    <tr>
+<tr>
       <th scope="col">#No.</th>
       <th scope="col">Nombre</th>
       <th scope="col">Cantidad</th>
       <th scope="col">Precio/U</th>
       <th scope="col">Imagen</th>
-      @can('create', App\Models\Productos::class) 
+@can('create', App\Models\Productos::class) 
       <th><a href="{{ url('/crearP')}}" class="btn btn-outline-dark">Agregar</a></th>
-      @endcan
-    </tr>
+@endcan
+ </tr>
   </thead>
   <tbody>
   @foreach($productos as $producto)
@@ -54,6 +46,10 @@
       <td>{{ $producto->precioU}}</td>
       <td><img class="img-thumbnail"width="100" height="100" src="{{ $producto->url_path}}"></td>
     <td>
+    <form action="{{url('transaccion')}}" >
+    <button type="submit" class="btn btn-outline-success" onclick="return ConfirmDelete()">Comprar</button>
+    </form> 
+    <a href="{{route ('preguntarp',$producto->id)}}" class="btn btn-outline-success">Preguntar</a>
       @can('create', App\Models\Productos::class)
         <a href="{{route('editarP', $producto->id)}}" class="btn btn-outline-success">Editar</a>
       @endcan
@@ -66,14 +62,11 @@
         <button type="submit" class="btn btn-outline-danger" onclick="return ConfirmDelete()">Borrar</button>
        @endcan
         </form>
-   
-    </td>
+   </td>
   </tr>
       @endforeach
       {{ $productos->links() }} 
   </tbody>
 </table>
-
 </div>
-
 @endsection

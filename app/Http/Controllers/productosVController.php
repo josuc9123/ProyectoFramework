@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Models\Productos;
+use App\Models\User;
+use App\Models\Transacciones;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
@@ -17,9 +19,7 @@ class productosVController extends Controller
         ->simplePaginate(5);
         return view('productosV', compact('productos'));
     }
-                
-            
-        
+                  
     }
     
     // listado
@@ -27,6 +27,16 @@ class productosVController extends Controller
      $data['productos'] = Productos::simplePaginate(5);
         return view('productosV', $data);
      }
-     // guardar
+     
+     public function calificarT(Request $request){
+       
+      $prodata = request()->except('_token');
+      Transacciones::insert($prodata);
+      $data['productos'] = Productos::simplePaginate(5);
+      return view('productosV', $data);
+     }
+     public function tran(){
+       return view('transaccion');
+     }
     
 }

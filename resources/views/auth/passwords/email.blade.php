@@ -1,6 +1,14 @@
 @extends('layouts.app')
 
 @section('content')
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+    <link rel="stylesheet" href="../login/css/login.css">
+    <link rel="stylesheet" href="../login/css/cabecera.css">
+    <link rel="stylesheet" href="../login/IMG/fondolegal.jpg">
+</head>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">

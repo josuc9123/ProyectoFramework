@@ -19,6 +19,7 @@ class CreateCategoriasTable extends Migration
             $table->string('descripcion');
             $table->string('tipo')->nullable();
             $table->timestamps();
+            $table->string('parent_id')->references('id')->on('categorias')->nullable();
         });
     }
 

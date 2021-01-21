@@ -47,7 +47,7 @@
       <td>{{ $user->email}}</td>
     <td>
       <a href="{{route('editar', $user->id)}}" class="btn btn-outline-success">Editar</a>
-      <a href="{{route('mostrar', $user->id)}}" class="btn btn-outline-success">mostrar</a>
+      <a href="{{route('mostrarU', $user->id)}}" class="btn btn-outline-success">mostrar</a>
       <form action="{{route('delete', $user->id)}}" method="POST">
         @csrf @method('DELETE')
         @can('view', App\Models\User::class)

@@ -32,7 +32,7 @@
       <td>{{ $producto->Nom_Producto}}</td>
       <td>{{ $producto->cantidad}}</td>
       <td>{{ $producto->precioU}}</td>
-     
+      <td><img class="img-thumbnail"width="100" height="100" src="{{ $producto->url_path}}"></td>
       <td>{{ $producto->created_at}}</td>
   </tr>
   

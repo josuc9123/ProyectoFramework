@@ -53,8 +53,9 @@ class AnonimoPolicy
      * @param  \App\Models\User  $model
      * @return mixed
      */
-    public function update(User $user, User $model)
+    public function update(User $user)
     {
+        return $user->tipo == "3";
         //
     }
 

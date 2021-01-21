@@ -41,5 +41,8 @@ class AuthServiceProvider extends ServiceProvider
         Gate::define('mproductos', function ($user) {
           return $user->tipo == "4";
         });
+        Gate::define('update', function ($user) {
+          return $user->tipo == "3";
+        });
      }
 }

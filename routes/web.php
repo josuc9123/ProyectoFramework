@@ -42,9 +42,10 @@ Route::get('Mproductos', function () {
     return view('Mproductos');	
 }); 
 
+
 Route::patch('edit/{id}','UserController@edit')->name('edit');
 Route::get('editar/{id}','UserController@editar')->name('editar');
-Route::get('mostrar/{id}','UserController@mostrar')->name('mostrar');
+Route::get('mostrarU/{id}','UserController@mostrar')->name('mostrarU');
 Route::delete('delete/{id}','UserController@delete')->name('delete');
 Route::get('usuariosS','UserController@list');
 Route::get('crear','UserController@crear');
@@ -79,9 +80,10 @@ Route::get('Mproductos','MproductosController@list')->name('Mproductos');
 Route::patch('editM/{id}','MProductosController@edit')->name('editM');
 Route::get('editarM/{id}','MProductosController@editar')->name('editarM');
 Route::delete('deleteM/{id}','MProductosController@delete')->name('deleteM');
-Route::get('productoS','MProductosController@list');
 Route::get('crearM','MProductosController@crear');
 Route::post('saveM','MProductosController@save')->name('saveM');
+Route::get('calificarT','productosVController@calificarT')->name('calificarT');
+Route::get('transaccion','productosVController@tran');
 //
 Route::get('vendedores','VendedorController@list');
 //
@@ -93,3 +95,10 @@ Route::get('/supervisor','HomeController@getUser');
 Route::get('/encargado','EncargadoController@index')->name('encargado');
 Route::get('/cliente','ClienteController@index')->name('cliente');
 Route::get('/contador','ContadorController@index')->name('contador');
+Route::get('subcategoria/{id}','SubCategoriaController@list')->name('subcategoria');
+Route::get('crearsub/{id}','SubCategoriaController@crear')->name('crearsub');
+Route::post('saveSub','SubCategoriaController@saveSub')->name('saveSub');
+
+
+Route::post('/register/check', 'EmailAvailable@check')->name('register.check');
+

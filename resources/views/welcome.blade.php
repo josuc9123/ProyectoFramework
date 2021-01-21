@@ -132,6 +132,10 @@
         <li class="nav-item active px-lg-4">
           <a class="nav-link text-uppercase text-expanded" href="contacto.html">Contacto</a>
         </li>
+        </li>
+        <li class="nav-item px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="productosV">EN VENTA</a>
+        </li>
         <li class="nav-item active px-lg-4">
           <a class="nav-link text-uppercase text-expanded" href="https://www.facebook.com/PC-Diagnostic-478224408893552/">FACEBOOK</a>
             </ul>
@@ -151,22 +155,22 @@
  <div class="container">
   <!-- Example row of columns -->
   <div class="row">
-    
+    <!--esto es algo que agregue-->
     <div class="col-md-4" style="color: black">
       <h2>Dispositivos moviles</h2>
       <p>Contamos con servicios a dispositivos moviles, abarcando variedad de modelos y sistemas operativos tales como Android y iOS, ademas de brindar garantias en nuestros servicios. </p>
-      <p><a class="btn btn-primary" href="piep" role="button">Ver detalles &raquo;</a></p>
+      
     
   </div>
     <div class="col-md-4" style="color: black">
       <h2>Audifonos</h2>
-      <p>Ofrecemos, gran variedad de productos y de buena calidad para audio. Precios totalmente accesibles. </p>
-      <p><a class="btn btn-primary" href="computo.html" role="button">Ver detalles &raquo;</a></p>
+      <p>Ofrecemos, gran variedad de productos y de buena calidad para audio. Precios totalmente accesibles, pudes verlo en el apartado de categorias </p>
+      
     </div>
     <div class="col-md-4" style="color:black">
       <h2>Electronica</h2>
       <p>Contamos tambien con una categoria de electronica en donde encontraras una variedad de productos.</p>
-      <p><a class="btn btn-primary" href="redes.html" role="button">Ver detalles &raquo;</a></p>
+      
     </div>
   </div>
   </div>

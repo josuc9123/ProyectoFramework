@@ -4,12 +4,16 @@
 
 
 @section('content')
-<div class="container mt-5"style="background-color: rgba(255, 255, 255, 0.80)">
+@if(session('calificar'))
 
-<script type="text/javascript">
+    {{ session('calificar')}}
+    @endif
+<div class="container mt-5"style="background-color: rgba(255, 255, 255, 0.80)">
+<script type="text/javascript" style="pading-center">
+
       function ConfirmDelete()
       {
-        var respuesta = confirm("estas seguro de eliminar este producto");
+        var respuesta = confirm("CONFIRMA LA TRANSACCION PARA LA COMPRA DEL PRODUCTO");
         if (respuesta == true)
         {
           return true;
@@ -20,10 +24,12 @@
         }
       }
     </script>
+
     @if(session('productoEliminado'))
     <div class="alert alert-seccess">
     {{ session('productoEliminado')}}
     @endif
+ 
     
     <a><form action="{{route('buscar')}}">Buscar por Nombre</a>
     <input class="form-control mr-sm-2" name="search" type="search" placeholder="Buscar" aria-label="Search">
@@ -41,16 +47,21 @@
   </thead>
   <tbody>
   @foreach($productos as $producto)
+  
   <tr>
       <td>{{ $producto->id}}</td>
       <td>{{ $producto->Nom_Producto}}</td>
       <td>{{ $producto->precioU}}</td>
       <td><img class="img-thumbnail"width="100" height="100" src="{{ $producto->url_path}}"></td>
     <td>
-     
-        <a href="{{route('editarP', $producto->id)}}" class="btn btn-outline-success">comprar</a>
+    
+    @can('update', App\Models\Productos::class)
+  
+    <form action="{{url('transaccion')}}" >
+    <button type="submit" class="btn btn-outline-success" onclick="return ConfirmDelete()">Comprar</button>
+    </form>  
         <a href="{{route ('preguntarp',$producto->id)}}" class="btn btn-outline-success">Preguntar</a>
-     
+        @endcan
      
    
     </td>

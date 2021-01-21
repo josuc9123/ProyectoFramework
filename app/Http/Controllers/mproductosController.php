@@ -30,36 +30,36 @@ class mproductosController extends Controller
      // guardar
      public function save(Request $request){
       $validator = $this->validate($request,
-             [
-                  'Nom_Producto'=> 'required|string|max:255',
-                  'cantidad' => 'required|string|max:255',
-                  'precioU' =>  'required'
+         [
+            'Nom_Producto'=> 'required|string|max:255',
+             'cantidad' => 'required|string|max:255',
+             'precioU' =>  'required'
             
             
-                ] );
-                $prodata = request()->except('_token');
-                mproductos::insert($prodata);
-                return back()->with('productoGuardado','producto guardado');
+        ] );
+         $prodata = request()->except('_token');
+         mproductos::insert($prodata);
+         return back()->with('productoGuardado','producto guardado');
             
             }
             //eliminar
-            public function delete($id){
+    public function delete($id){
                 mproductos::destroy($id);
                 return back()->with('productoEliminado','Producto Eliminado');
             }
             //editar
-            public function editar($id){
+    public function editar($id){
                 $productos = mproductos::findOrFail($id);
                 return view('supervisor.cliente.editarM', compact('productos'));
             }
-            public function edit(Request $request, $id){
+    public function edit(Request $request, $id){
                 $datosProducto = request()->except((['_token', '_method']));
                mproductos::where('id', '=', $id)->update($datosProducto);
                 return back()->with('productoModificado','producto Modificado');
             }
             
         
-            public function store(Request $request)
+    public function store(Request $request)
             {
                 if ($request-hasFile('imagen')){
                     $path = $request->file('imagen')-store('public');

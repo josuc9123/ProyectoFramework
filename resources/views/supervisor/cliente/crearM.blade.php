@@ -28,8 +28,8 @@
 <input name="cantidad" type="text" placeholder="cantidad">
 <input name="precioU" type="text" placeholder="P/u">
 <input name="tipo_producto" type="text" placeholder="tipo">
-<input name="imagen" type="file" placeholder="imagen">
 
+<td><input name="imagen" type="file" style="color:white" placeholder="imagen"></td>
 
 <button type="submit"  class="btn btn-outline-success">Enviar</button>
 </form>

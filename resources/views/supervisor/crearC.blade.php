@@ -21,14 +21,14 @@
 </div>
     @endif
 
-<form action="{{ route('saveC')}}" method="POST"> 
+    <form action="{{ route('saveC')}}" method="POST"> 
     @csrf
 <input  name="categorias" type="text" placeholder="categorias">
 <input name="descripcion" type="text" placeholder="descripcion">
 <input name="tipo" type="text" placeholder="tipo">
 
 
- <button type="submit"  class="btn btn-outline-success">Enviar</button>
+<button type="submit"  class="btn btn-outline-success">Enviar</button>
 </form>
 <a  class="btn btn-outline-success" href="{{ url('categorias')}}">regresar</button>
 @endsection

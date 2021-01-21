@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use App\Models\Productos;
 use App\Models\User;
+use App\Models\Transacciones;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,12 +28,12 @@ class HomeController extends Controller
     public function index()
     {
       
-        
-        $data['users'] = User::simplePaginate(5);
-        $data1['productos'] = Productos::simplePaginate(5);
-        return view('supervisor.supervisor', $data, $data1);
+        $data3['productos'] = Productos::all();
+        $data1['users'] = User::simplePaginate(5);
+        $data2['transacciones'] = Transacciones::simplePaginate(5);
+        return view('supervisor.supervisor',$data1,$data2)->with('productos',$data3);
               
-          }
+     }
 
     public function getUser(){
         return view ('supervisor');

@@ -15,14 +15,14 @@ class TodosSeeder extends Seeder
     public function run()
     {
         $useradmin=User::create([
-            'name' => 'admin josue',
-            'email' => 'admin@gmail.com',
+            'name' => 'supervisor josue',
+            'email' => 'super@gmail.com',
             'password' => Hash::make('admin'),
             'tipo' => '1',
             'codigo' => 'adm1',
         ]);
         $useradmin=User::create([
-            'name' => 'supervisor williams',
+            'name' => 'admin williams',
             'email' => 'williams@gmail.com',
             'password' => Hash::make('williams'),
             'tipo' => '2',

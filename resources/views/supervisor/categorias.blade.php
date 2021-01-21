@@ -1,14 +1,8 @@
 @extends('layout.superv')
 
 @section('title', 'categorias')
-
-
 @section('content')
-
-
-
 <div class="container mt-5"style="background-color: rgba(255, 255, 255, 0.80)">
-
 <script type="text/javascript">
       function ConfirmDelete()
       {
@@ -26,7 +20,11 @@
     @if(session('categoriaEliminado'))
     <div class="alert alert-seccess">
     {{ session('categoriaEliminado')}}
+    
     @endif
+    <a><form action="{{route('buscar')}}">Buscar por Nombre</a>
+ <input class="form-control mr-sm-2" name="search" type="search" placeholder="Buscar" aria-label="Search">
+  </form>
     <table class="table table-bordered table-striped text-center">
   <thead>
       
@@ -37,12 +35,14 @@
       <th scope="col">Acciones</th>
       @can('create', App\Models\Categorias::class)
       <th><a href="{{ url('/crearC')}}" class="btn btn-outline-dark">Agregar</a></th>
+      
       @endcan
     </tr>
   </thead>
   <tbody>
   @foreach($categorias as $categoria)
   <tr>
+  @if($categoria->parent_id == NULL)
       <td>{{ $categoria->id}}</td>
       <td>{{ $categoria->categorias}}</td>
       <td>{{ $categoria->descripcion}}</td>
@@ -50,6 +50,8 @@
     @can('create', App\Models\Categorias::class)
         <a href="{{route('editarC', $categoria->id)}}" class="btn btn-outline-success">Editar</a>
       @endcan
+      <a href="{{route('subcategoria', $categoria->id)}}" class="btn btn-outline-success">Ver Sub-Categoria</a>
+      <a href="{{route('crearsub', $categoria->id)}}" class="btn btn-outline-success">Agregar Sub-Categoria</a>
         <a href="{{route('mostrarp', $categoria->tipo)}}" class="btn btn-outline-success">Mostrar</a>
       @can('create', App\Models\Categorias::class)
     <form action="{{route('deleteC', $categoria->id)}}" method="POST">
@@ -60,6 +62,7 @@
       
       </td>
  </tr>
+ @endif
       @endforeach
       
   </tbody>

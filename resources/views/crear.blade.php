@@ -1,10 +1,6 @@
 @extends('layout.superv')
-
 @section('title', 'crear')
-
-
 @section('content')
-
 @if(session('usuarioGuardado'))
 <div class="alert alert-success">
 {{ session('usuarioGuardado') }}
@@ -18,12 +14,8 @@
 <li>{{ $error }}</li>
 @endforeach
 </ul>
-
     @endif
-    
-    
     <form action="{{ route('save')}}" method="POST"> 
- 
     @csrf
     <div class="form-group">
 <input  name="name" type="text"class="form-control" placeholder="usuario">
@@ -37,12 +29,8 @@
 <div class="form-group">
 <input name="password" type="password" class="form-control" placeholder="otorgar contraseña">
 </div>
-
 <button type="submit" >Enviar</button>
-
-
 </form>
-
 </div>
 </table>
 <button href="usuariosS">regresar</button>

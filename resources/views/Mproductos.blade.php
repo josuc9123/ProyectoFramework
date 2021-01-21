@@ -57,9 +57,9 @@
         <a href="{{route('editarM', $mproducto->id)}}" class="btn btn-outline-success">Editar</a>
      
         <form action="{{route('deleteM', $mproducto->id)}}" method="POST">
-      
+   
         <button type="submit" class="btn btn-outline-danger" onclick="return ConfirmDelete()">Borrar</button>
-       
+    
         </form>
    
     </td>
