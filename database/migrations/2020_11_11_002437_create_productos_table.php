@@ -20,6 +20,8 @@ class CreateProductosTable extends Migration
             $table->float('precioU');
             $table->string('tipo_producto');
             $table->binary('imagen');
+            $table->integer('concesionado')->nullable();
+            $table->enum('recibido', ['recibido','no recibido'])->default('no recibido');
             $table->timestamps();
            
         });

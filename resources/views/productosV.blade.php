@@ -47,21 +47,28 @@
   </thead>
   <tbody>
   @foreach($productos as $producto)
-  
   <tr>
       <td>{{ $producto->id}}</td>
       <td>{{ $producto->Nom_Producto}}</td>
       <td>{{ $producto->precioU}}</td>
       <td><img class="img-thumbnail"width="100" height="100" src="{{ $producto->url_path}}"></td>
     <td>
-    
+    <td>
     @can('update', App\Models\Productos::class)
-  
     <form action="{{url('transaccion')}}" >
     <button type="submit" class="btn btn-outline-success" onclick="return ConfirmDelete()">Comprar</button>
-    </form>  
-        <a href="{{route ('preguntarp',$producto->id)}}" class="btn btn-outline-success">Preguntar</a>
+    </form> 
+    <a href="{{route ('preguntarp',$producto->id)}}" class="btn btn-outline-success">Preguntar</a>
+     
+      @can('create', App\Models\Productos::class)
+        <a href="{{route('kardex', $producto->id)}}" class="btn btn-outline-success">Ver Cardex</a>
+      @endcan
+      @can('create', App\Models\Productos::class)
+        </form>
         @endcan
+   </td>
+    
+
      
    
     </td>

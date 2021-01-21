@@ -16,7 +16,7 @@ class Productos extends Model
      * @var array
      */
     protected $fillable = [
-        'Nom_Producto', 'cantidad', 'precio','tipo_producto','imagen'
+        'Nom_Producto', 'cantidad', 'precio','tipo_producto','imagen','concesionado'
     ];
     public function getUrlPathAttribute()
     {

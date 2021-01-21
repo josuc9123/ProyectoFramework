@@ -64,11 +64,13 @@ Route::delete('deleteP/{id}','ProductosController@delete')->name('deleteP');
 Route::get('productoS','ProductosController@list');
 Route::get('crearP','ProductosController@crear');
 Route::post('saveP','ProductosController@save')->name('saveP');
+Route::get('revisarP/{id}','RevisionController@editar')->name('revisarP');
+Route::put('savePR/{id}','RevisionController@update')->name('savePR');
 //USUARIOS
 Route::get('editarUsuario/{id}','UsuariosEditController@editar')->name('editarUsuario');
 Route::patch('editU/{id}','UsuariosEditController@edit')->name('editU');
 Route::get('buscar','ProductosController@index')->name('buscar');
-
+Route::get('recibir','EstadosController@index')->name('recibir');
 //productos anonimo
 Route::get('mostrarp/{id}','CategoriasController@mostrarp')->name('mostrarp');
 //cliente
@@ -76,7 +78,7 @@ Route::get('preguntarp/{id}','PreguntasController@form')->name('preguntarp');
 Route::post('preguntar','PreguntasController@index')->name('preguntar');
 Route::get('productosV','productosVController@list');
 Route::get('Mproductos','MproductosController@list')->name('Mproductos');
-
+Route::get('revision','RevisionController@index');
 Route::patch('editM/{id}','MProductosController@edit')->name('editM');
 Route::get('editarM/{id}','MProductosController@editar')->name('editarM');
 Route::delete('deleteM/{id}','MProductosController@delete')->name('deleteM');
@@ -84,6 +86,8 @@ Route::get('crearM','MProductosController@crear');
 Route::post('saveM','MProductosController@save')->name('saveM');
 Route::get('calificarT','productosVController@calificarT')->name('calificarT');
 Route::get('transaccion','productosVController@tran');
+route::put('_Concesionar/{​​id}​​','EstadosController@Concesionado');
+
 //
 Route::get('vendedores','VendedorController@list');
 //

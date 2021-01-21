@@ -87,12 +87,9 @@
      
      </nav>
     @endguest
-  
-  
-  
-
 
       <link href="../css/gestion20.css" rel="stylesheet">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
       <script>window.jQuery || document.write('<script src="../assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.9.0/feather.min.js"></script>
@@ -130,9 +127,9 @@
       }
     </style>
     <!-- Custom styles for this template -->
-    <link href="carousel3.css" rel="stylesheet">
+    
 <!-- Bootstrap -->
-    <link href="../public/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
      <!-- Fonts -->
     
@@ -141,7 +138,7 @@
      
 
     <!-- Styles -->
-    <link href="../public/css/gestion20.css" rel="stylesheet">
+    <link href="./css/gestion20.css" rel="stylesheet">
     
   </head>
          
@@ -200,6 +197,15 @@
           <a class="nav-link text-uppercase text-expanded" href="/Vendedores">Vendedores</a>
             </li> 
             @endcan
+            <li class="nav-item px-lg-4">
+          <a class="nav-link text-uppercase text-expanded"href="revision">Revision</a>
+          </li>
+            @can('create', App\Models\Categorias::class)
+         <li class="nav-item px-lg-4">
+          <a class="nav-link text-uppercase text-expanded" href="/recibir">Recibi</a>
+            </li> 
+            
+            @endcan 
           @can('create', App\Models\Categorias::class)
         <li class="nav-item px-lg-4">
           <a class="nav-link text-uppercase text-expanded" href="/productoS">Productos</a>
@@ -249,7 +255,7 @@
   </footer>
       
           <!-- Bootstrap -->
- <script src="../public/vendor/jquery/jquery.min.js"></script>
-<script src="../public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+          <script src="../public/vendor/jquery/jquery.min.js"></script>
+          <script src="../public/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 

@@ -29,9 +29,8 @@
 <tr>
       <th scope="col">#No.</th>
       <th scope="col">Nombre</th>
-      <th scope="col">Cantidad</th>
-      <th scope="col">Precio/U</th>
       <th scope="col">Imagen</th>
+      
 @can('create', App\Models\Productos::class) 
       <th><a href="{{ url('/crearP')}}" class="btn btn-outline-dark">Agregar</a></th>
 @endcan
@@ -39,45 +38,19 @@
   </thead>
   <tbody>
   @foreach($productos as $producto)
-  <tr @if ($producto->concesionado==2)
-class="p-3 mb-2 bg-info text-white"
-
-@endif
-
-@if ($producto->concesionado==1)
-class="p-3 mb-2 bg-danger text-white"
-@endif
-@if ($producto->concesionado==3)
-class="p-3 mb-2 bg-success text-white"
-@endif
-class="p-3 mb-2 bg-warning text-dark">>
+  <tr>
       <td>{{ $producto->id}}</td>
       <td>{{ $producto->Nom_Producto}}</td>
-      <td>{{ $producto->cantidad}}</td>
-      <td>{{ $producto->precioU}}</td>
       <td><img class="img-thumbnail"width="100" height="100" src="{{ $producto->url_path}}"></td>
     <td>
-    <form action="{{url('transaccion')}}" >
-    <button type="submit" class="btn btn-outline-success" onclick="return ConfirmDelete()">Comprar</button>
-    </form> 
-    <a href="{{route ('preguntarp',$producto->id)}}" class="btn btn-outline-success">Preguntar</a>
-      @can('create', App\Models\Productos::class)
-        <a href="{{route('editarP', $producto->id)}}" class="btn btn-outline-success">Editar</a>
-      @endcan
-      @can('create', App\Models\Productos::class)
-        <a href="{{route('kardex', $producto->id)}}" class="btn btn-outline-success">Ver Cardex</a>
-      @endcan
-      @can('create', App\Models\Productos::class)
-        <form action="{{route('delete', $producto->id)}}" method="POST">
-      @csrf @method('DELETE')
-        <button type="submit" class="btn btn-outline-danger" onclick="return ConfirmDelete()">Borrar</button>
-       @endcan
-        </form>
+     <a href="{{route('revisarP', $producto->id)}}" class="btn btn-outline-success">Revisar</a>
+      
    </td>
   </tr>
       @endforeach
-      {{ $productos->links() }} 
+  
   </tbody>
 </table>
 </div>
 @endsection
+
